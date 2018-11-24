@@ -7,6 +7,11 @@ namespace QMSystem.Controllers
     {
         private DocumentContext _context;
 
+        public HomeController(DocumentContext context)
+        {
+            _context = context;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -57,14 +62,13 @@ namespace QMSystem.Controllers
         }
 
         //Add Document to DB
-
         [HttpPost]
         public ActionResult Create(Documents document)
         {
-            _context.Customers.Add(document);
+            _context.Documents.Add(document);
             _context.SaveChanges();
 
-            return RedirectToAction("Index", "ChangeRequest");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

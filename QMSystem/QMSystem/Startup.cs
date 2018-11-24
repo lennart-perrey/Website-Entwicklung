@@ -36,7 +36,7 @@ namespace QMSystem
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            String connection = @"Server=localhost\SQL Server;Database=QMSDB;user ID=sa;password=student";
+            String connection = @"Server=(localdb)\mssqllocaldb;Database=QMSDB;Trusted_Connection=True;ConnectRetryCount=0";
 
             services.AddDbContext<DocumentContext>
                 (options => options.UseSqlServer(connection));

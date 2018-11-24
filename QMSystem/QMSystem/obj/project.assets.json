@@ -11509,11 +11509,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marc\\Documents\\Visual Studio 2017\\Projects\\QMSystem\\QMSystem\\QMSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Marc\\Documents\\GitHub\\Website-Entwicklung\\QMSystem\\QMSystem\\QMSystem.csproj",
       "projectName": "QMSystem",
-      "projectPath": "C:\\Users\\Marc\\Documents\\Visual Studio 2017\\Projects\\QMSystem\\QMSystem\\QMSystem.csproj",
+      "projectPath": "C:\\Users\\Marc\\Documents\\GitHub\\Website-Entwicklung\\QMSystem\\QMSystem\\QMSystem.csproj",
       "packagesPath": "C:\\Users\\Marc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marc\\Documents\\Visual Studio 2017\\Projects\\QMSystem\\QMSystem\\obj\\",
+      "outputPath": "C:\\Users\\Marc\\Documents\\GitHub\\Website-Entwicklung\\QMSystem\\QMSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

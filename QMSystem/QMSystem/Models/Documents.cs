@@ -18,14 +18,15 @@ namespace QMSystem.Models
             : base(options)
         { }
 
-        public DbSet<Documents> Customers { get; set; }
+        public DbSet<Documents> Documents { get; set; }
     }
     public class Documents
     {
+        [Key]
         public int DocumentId { get; set; }
 
         public string DocumentName { get; set; }
 
-        public bool DocumentPath { get; set; }
+        public string DocumentPath { get; set; }
     }
 }
