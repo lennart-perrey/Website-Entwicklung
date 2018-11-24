@@ -150,7 +150,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\StyleSheet\StyleSheet1.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -204,12 +203,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Views\Home\dokumente.html" />
-    <Content Include="Views\Home\neuigkeiten.html" />
-    <Content Include="Views\Home\prozesse.html" />
     <Content Include="Views\Home\Style.css" />
-    <Content Include="Views\Home\taetigkeiten.html" />
-    <Content Include="Views\Home\veraenderungen.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -233,6 +227,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\RelevanteProzesse.cshtml" />
+    <Content Include="Views\Home\RelevanteDokumente.cshtml" />
+    <Content Include="Views\Home\Aufgaben.cshtml" />
+    <Content Include="Views\Home\Veraenderungen.cshtml" />
+    <Content Include="Views\Home\Neuigkeiten.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
