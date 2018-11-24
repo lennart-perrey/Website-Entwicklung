@@ -1,5 +1,7 @@
-﻿
+﻿@model Website_Entwicklung.ViewModels.NewDocumentsViewModel
+
 @{
+    ViewData["Title"] = "ChangeRequest";
     Layout = null;
 }
 
@@ -7,59 +9,60 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="~/App_Themes/StyleSheet/Style.css" rel="stylesheet" type="text/css" / >
+    <link href="~/App_Themes/StyleSheet/Style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-    <div class="main">
-        <div class="column menu">
-            <aside>
-                <h1 id="h1">Meine Übersicht</h1>
-                <a href="">Prozesse und Dokumente</a><br />
-                <a href="">Maßnahmen</a><br />
-                <a href="">Audits</a><br />
-                <a href="">Gefahrenstoffmanagement</a><br />
-                <a href="">Konfiguration</a><br />
-                <a href="~/Home/ChangeRequests">Änderungsantrag stellen</a><br />
-            </aside>
-        </div>
-        <div class="column title">
-            <header>Guten Tag Miriam Mitarbeiter...</header>
-            <div class="Actions">
-                <link rel="stylesheet" href="style.css" />
-                <form method="post" @*enctype="multipart/form-data"*@>
+    <body>
+        <div class="main">
+            <div class="column menu">
+                <aside>
+                    <h1 id="h1">Meine Übersicht</h1>
+                    <a href="">Prozesse und Dokumente</a><br />
+                    <a href="">Maßnahmen</a><br />
+                    <a href="">Audits</a><br />
+                    <a href="">Gefahrenstoffmanagement</a><br />
+                    <a href="">Konfiguration</a><br />
+                    <a href="~/Home/ChangeRequests">Änderungsantrag stellen</a><br />
+                </aside>
+            </div>
+            <div class="column title">
+                <header>Änderungsantrag</header>
+                <div class="Actions">
+                    <form method="post" @*enctype="multipart/form-data"*@>
+                        <h2>Bitte Datei auswählen</h2>
+                        <label>
+                            Wählen Sie eine Textdatei (*.txt, *.html usw.) von Ihrem Rechner aus.
+                            <input name="datei" type="file" size="50" accept="text/*">
+                        </label>
+                        <button>… und ab geht die Post!</button>
 
+                        Select a file to upload:
+                        <input type="file" id="myFile" size="50">
 
-                    <h1 id="h1">Änderungsantrag</h1>
-                    <h2>Bitte Datei auswählen</h2>
+                        <p>Click the button below do the display the file path of the file upload button above (you must select a file first).</p>
+                        <button type="button" onclick="myFunction()">Try it</button>
 
+                        <p id="demo"></p>
 
-                    <label>
-                        Wählen Sie eine Textdatei (*.txt, *.html usw.) von Ihrem Rechner aus.
-                        <input name="datei" type="file" size="50" accept="text/*">
-                    </label>
-                    <button>… und ab geht die Post!</button>
-
-                    Select a file to upload:
-                    <input type="file" id="myFile" size="50">
-
-                    <p>Click the button below do the display the file path of the file upload button above (you must select a file first).</p>
-                    <button type="button" onclick="myFunction()">Try it</button>
-
-                    <p id="demo"></p>
-
-                    <script>
-                        function myFunction() {
-                            var x = document.getElementById("myFile").value;
-                            document.getElementById("demo").innerHTML = x;
-
+                        <script>
+                            function myFunction() {
+                                var x = document.getElementById("myFile").value;
+                                document.getElementById("demo").innerHTML = x;
+                            }
+                        </script>
+                    </form>
+                    <div>
+                        @using (Html.BeginForm("Create", "Documents"))
+                        {
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.document.DocumentName)
+                                @Html.TextBoxFor(m => m.document.DocumentName)
+                            </div>
+                            <button type="submit" class="btn"> Save </button>
                         }
-                    </script>
-                    <p>
-                        Ab dem 01.01.2015 unerstützt uns Frau Emma meier im Vertriebsbereich
-                        NORD Wir möchten Frau meier ganz herzlich in unserrem Team begrüßen
-                    </p>
-                </form>
+                    </div>
                 </div>
             </div>
-        </body>
+        </div>
+        
+    </body>
 </html>

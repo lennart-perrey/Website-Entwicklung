@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Website_Entwicklung.Models;
 
 namespace Website_Entwicklung.Controllers
 {
     public class HomeController : Controller
     {
+        private DocumentContext _context;
+
         public ActionResult Index()
         {
             return View();
@@ -55,6 +58,17 @@ namespace Website_Entwicklung.Controllers
         public ActionResult RelevanteDokumente()
         {
             return View();
+        }
+
+        //Add Document to DB
+
+        [HttpPost]
+        public ActionResult Create(Documents document)
+        {
+            _context.Customers.Add(document);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "ChangeRequest");
         }
     }
 }
