@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="~/css/Style.css" rel="stylesheet" type="text/css" / >
+</head>
+<body>
+    <div class="main">
+        <div class="column menu">
+            <aside>
+                <h1 id="h1">Meine Übersicht</h1>
+                <a href="">Prozesse und Dokumente</a><br />
+                <a href="">Maßnahmen</a><br />
+                <a href="">Audits</a><br />
+                <a href="">Gefahrenstoffmanagement</a><br />
+                <a href="">Konfiguration</a><br />
+                <a href="~/Home/ChangeRequests">Änderungsantrag stellen</a><br />
+            </aside>
+        </div>
+        <div class="column title">
+            <header>Guten Tag Miriam Mitarbeiter...</header>
+            <div class="row">
+                <div class="column left">
+                    <iframe src="~/Home/Neuigkeiten"></iframe>
+
+                    <iframe src="~/Home/RelevanteProzesse"></iframe>
+
+                    <iframe src="~/Home/RelevanteDokumente"></iframe>
+                </div>
+
+                <div class=" column right">
+                    <iframe src="~/Home/Veraenderungen"></iframe>
+
+                    <iframe src="~/Home/Aufgaben"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

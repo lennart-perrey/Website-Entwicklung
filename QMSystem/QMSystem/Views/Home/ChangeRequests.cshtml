@@ -1,0 +1,59 @@
+﻿@model QMSystem.ViewModels.NewDocumentsViewModel
+
+@{
+    ViewData["Title"] = "ChangeRequest";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css"/>
+</head>
+    <body>
+        <div class="main">
+            <div class="column menu">
+                <aside>
+                    <h1 id="h1">Meine Übersicht</h1>
+                    <a href="">Prozesse und Dokumente</a><br />
+                    <a href="">Maßnahmen</a><br />
+                    <a href="">Audits</a><br />
+                    <a href="">Gefahrenstoffmanagement</a><br />
+                    <a href="">Konfiguration</a><br />
+                    <a href="~/Home/ChangeRequests">Änderungsantrag stellen</a><br />
+                </aside>
+            </div>
+            <div class="column title">
+                <header>Änderungsantrag</header>
+                <div class="Actions">
+                    <form method="post" @*enctype="multipart/form-data"*@>
+                        <h2>Bitte Datei auswählen</h2>
+
+                        Select a file to upload:
+                        <input type="file" id="myFile" size="50">
+
+                        <p>Click the button below do the display the file path of the file upload button above (you must select a file first).</p>
+                        <button type="button" onclick="myFunction()">Try it</button>
+
+                        <p id="demo"></p>
+
+
+                        @using (Html.BeginForm("Create", "Documents"))
+                        {
+                            <script>
+                                function myFunction() {
+                                    var fileName = document.getElementById("myFile").value;
+                                    document.getElementById("myFileName").innerHTML = fileName;
+                                }
+                            </script>
+                            @Html.LabelFor(x => x.document.DocumentPath, new { id = "myFileName"})
+                            <button type="submit" class="btn"> Save </button>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
