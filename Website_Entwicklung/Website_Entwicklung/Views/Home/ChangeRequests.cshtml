@@ -5,13 +5,40 @@
 
 <!DOCTYPE html>
 
+
 <html>
 <link rel="stylesheet" href="style.css" />
+<form method="post" @*enctype="multipart/form-data"*@>
 
-<h1 id="h1">Aufgaben</h1>
-<h2>Neuer Mitarbeiter, gestern</h2>
-<p>
-    Ab dem 01.01.2015 unerstützt uns Frau Emma meier im Vertriebsbereich
-    NORD Wir möchten Frau meier ganz herzlich in unserrem Team begrüßen
-</p>
+
+    <h1 id="h1">Änderungsantrag</h1>
+    <h2>Bitte Datei auswählen</h2>
+
+
+    <label>
+        Wählen Sie eine Textdatei (*.txt, *.html usw.) von Ihrem Rechner aus.
+        <input name="datei" type="file" size="50" accept="text/*">
+    </label>
+    <button>… und ab geht die Post!</button>
+
+    Select a file to upload:
+    <input type="file" id="myFile" size="50">
+
+    <p>Click the button below do the display the file path of the file upload button above (you must select a file first).</p>
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myFile").value;
+            document.getElementById("demo").innerHTML = x;
+
+        }
+    </script>
+    <p>
+        Ab dem 01.01.2015 unerstützt uns Frau Emma meier im Vertriebsbereich
+        NORD Wir möchten Frau meier ganz herzlich in unserrem Team begrüßen
+    </p>
+</form>
 </html>
