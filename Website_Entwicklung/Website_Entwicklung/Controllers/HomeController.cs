@@ -26,5 +26,35 @@ namespace Website_Entwicklung.Controllers
 
             return View();
         }
+
+        public ActionResult Neuigkeiten()
+        {
+            return View();
+        }
+
+        public ActionResult Aufgaben()
+        {
+            return View();
+        }
+
+        public ActionResult ChangeRequests()
+        {
+            return View();
+        }
+
+        public ActionResult Veraenderungen()
+        {
+            return View();
+        }
+
+        public ActionResult RelevanteProzesse()
+        {
+            return View();
+        }
+
+        public ActionResult RelevanteDokumente()
+        {
+            return View();
+        }
     }
 }

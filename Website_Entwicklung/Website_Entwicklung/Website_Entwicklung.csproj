@@ -232,6 +232,7 @@
     <Content Include="Views\Home\Aufgaben.cshtml" />
     <Content Include="Views\Home\Veraenderungen.cshtml" />
     <Content Include="Views\Home\Neuigkeiten.cshtml" />
+    <Content Include="Views\Home\ChangeRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
