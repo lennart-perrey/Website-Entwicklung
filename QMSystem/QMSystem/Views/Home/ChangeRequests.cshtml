@@ -1,60 +1,38 @@
 ﻿@model QMSystem.ViewModels.NewDocumentsViewModel
 
 @{
-    ViewData["Title"] = "ChangeRequest";
-    Layout = null;
+    ViewData["Title"] = "Änderungsantrag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="~/css/Style.css" rel="stylesheet" type="text/css"/>
-</head>
-    <body>
-        <div class="main">
-            <div class="column menu">
-                <aside>
-                    <h1 id="h1">Meine Übersicht</h1>
-                    <a href="~/Home/Neuigkeiten">Neuigkeiten</a><br />
-                    <a href="~/Home/RelevanteProzesse">Relevante Prozesse</a><br />
-                    <a href="~/Home/Veraenderungen">Veraenderungen</a><br />
-                    <a href="~/Home/Aufgaben">Aufgaben</a><br />
-                    <a href="~/Home/ChangeRequests">Änderungsantrag stellen</a><br />
-                </aside>
-            </div>
-            <div class="column title">
-                <header>Änderungsantrag</header>
-                <div class="Actions">
-                        <h2>Bitte Datei auswählen</h2>
+<p>Titel der Änderung</p>
+<input type="text" id="ChangeTitle"/>
+<p>Beschreibung der Änderung</p>
+<textarea rows="10" cols="80"></textarea>
+<h2>Bitte Datei auswählen</h2>
+<input type="file" id="myFile" size="50">
+<button type="button" onclick="Abbrechen()">Abbrechen</button>
+<button type="button" onclick="myFunction()">Antrag stellen</button>
 
-                        Select a file to upload:
-                        <input type="file" id="myFile" size="50">
 
-                        <p>Click the button below do the display the file path of the file upload button above (you must select a file first).</p>
-                        <button type="button" onclick="myFunction()">Try it</button>
 
-                        <p id="demo"></p>
 
-                        <script>
-                            var fileName
+<script>
+    var fileName
 
-                            function myFunction() {
-                                fileName = document.getElementById("myFile").files[0];
-                                fileName = fileName.name;
-                                document.getElementById("myFileName").innerHTML = fileName;
-                            }
-                        </script>
+    function myFunction() {
+        fileName = document.getElementById("myFile").files[0];
+        fileName = fileName.name;
+        document.getElementById("myFileName").innerHTML = fileName;
+    }
+</script>
 
-                        @using (Html.BeginForm("Create", "Home"))
-                        { 
-                        <div>
-                            @Html.LabelFor(x => x.document.DocumentName, new { id = "myFileName" })
-                        </div>
-                            <button type="submit" class="btn"> Save </button>
-                        }
-                </div>
-            </div>
-        </div>        
-    </body>
-</html>
+@using (Html.BeginForm("Create", "Home"))
+{
+    <div>
+        @Html.LabelFor(x => x.document.DocumentName, new { id = "myFileName" })
+    </div>
+    <button type="submit" class="btn"> Save </button>
+}
+
+
