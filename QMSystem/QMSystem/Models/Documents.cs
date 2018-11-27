@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QMSystem.Models
 {
@@ -23,6 +24,7 @@ namespace QMSystem.Models
     public class Documents
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DocumentId { get; set; }
 
         public string DocumentName { get; set; }

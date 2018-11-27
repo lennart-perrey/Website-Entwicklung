@@ -4,35 +4,41 @@
     ViewData["Title"] = "Änderungsantrag";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<p>Titel der Änderung</p>
-<input type="text" id="ChangeTitle"/>
-<p>Beschreibung der Änderung</p>
-<textarea rows="10" cols="80"></textarea>
-<h2>Bitte Datei auswählen</h2>
-<input type="file" id="myFile" size="50">
-<button type="button" onclick="Abbrechen()">Abbrechen</button>
-<button type="button" onclick="myFunction()">Antrag stellen</button>
+<div style="margin-left:10px">
+        <p>Titel der Änderung</p>
+        <input type="text" id="ChangeTitle" />
+        <p>Beschreibung der Änderung</p>
+    <textarea rows="10" cols="80"></textarea>
+        <h2>Bitte Datei auswählen</h2>
+        <input type="file" id="myFile" size="50">
+        <button type="button" onclick="Abbrechen()">Abbrechen</button>
+        <button type="button" onclick="myFunction()">Antrag stellen</button>
+</div>
 
 
 
 
 <script>
     var fileName
-
+    var filePath
     function myFunction() {
         fileName = document.getElementById("myFile").files[0];
         fileName = fileName.name;
         document.getElementById("myFileName").innerHTML = fileName;
+
+        filePath = document.getElementById("myFile").value;
+        document.getElementById("myFilePath").innerHTML = filePath;
     }
 </script>
 
 @using (Html.BeginForm("Create", "Home"))
 {
-    <div>
-        @Html.LabelFor(x => x.document.DocumentName, new { id = "myFileName" })
-    </div>
-    <button type="submit" class="btn"> Save </button>
+<div style="margin-left:10px">
+
+    @Html.LabelFor(x => x.document.DocumentName, new { id = "myFileName" })
+    @Html.LabelFor(m => m.document.DocumentPath, new { id = "myFilePath" })
+</div>
+    <button type="submit" class="btn" style="margin-left:10px"> Save </button>
 }
 
 
