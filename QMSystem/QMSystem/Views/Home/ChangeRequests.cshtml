@@ -4,12 +4,13 @@
     ViewData["Title"] = "Änderungsantrag";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<p>Titel der Änderung</p>
+<h4>User</h4>
+<input type="text" id="UserNamer" readonly value="@Data.userName" />
+<h4>Titel der Änderung</h4>
 <input type="text" id="ChangeTitle"/>
-<p>Beschreibung der Änderung</p>
+<h4>Beschreibung der Änderung</h4>
 <textarea rows="10" cols="80"></textarea>
-<h2>Bitte Datei auswählen</h2>
+<h4>Bitte Datei auswählen</h4>
 <input type="file" id="myFile" size="50">
 <button type="button" onclick="Abbrechen()">Abbrechen</button>
 <button type="button" onclick="myFunction()">Antrag stellen</button>

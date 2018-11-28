@@ -66,5 +66,6 @@ namespace QMSystem
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+        
     }
 }
