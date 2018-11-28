@@ -67,9 +67,6 @@ namespace QMSystem.Controllers
         [HttpPost]
         public ActionResult Create(string ChangeTitle, string Beschreibung, string myFile)
         {
-            //_context.Documents.Add(document);
-            //_context.SaveChanges();
-
             Documents document = new Documents();
             document.DocumentName = myFile;
             document.DocumentPath = "C:/TestPath";
