@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QMSystem.Migrations
@@ -14,7 +15,9 @@ namespace QMSystem.Migrations
                     DocumentId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DocumentName = table.Column<string>(nullable: true),
-                    DocumentPath = table.Column<string>(nullable: true)
+                    DocumentPath = table.Column<string>(nullable: true),
+                    RequestDate = table.Column<DateTime>(nullable: false),
+                    UserName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -30,5 +30,10 @@ namespace QMSystem.Models
         public string DocumentName { get; set; }
 
         public string DocumentPath { get; set; }
+
+        public DateTime RequestDate { get; set; }
+
+        public string UserName { get; set; }
+
     }
 }

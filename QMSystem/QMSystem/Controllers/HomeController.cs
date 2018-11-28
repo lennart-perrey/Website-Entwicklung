@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using QMSystem.Models;
+using System;
 
 namespace QMSystem.Controllers
 {
@@ -63,8 +65,17 @@ namespace QMSystem.Controllers
 
         //Add Document to DB
         [HttpPost]
-        public ActionResult Create(Documents document)
+        public ActionResult Create(string ChangeTitle, string Beschreibung, string myFile)
         {
+            //_context.Documents.Add(document);
+            //_context.SaveChanges();
+
+            Documents document = new Documents();
+            document.DocumentName = myFile;
+            document.DocumentPath = "C:/TestPath";
+            document.UserName = Environment.UserName;
+            document.RequestDate = DateTime.Now;
+
             _context.Documents.Add(document);
             _context.SaveChanges();
 
