@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - QMSystem Mürwiker Werkstätten GmbH</title>
 
-
-
     <environment include="Development">
         @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
         <link rel="stylesheet" href="~/css/Style.css" />
@@ -18,44 +16,34 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-
-    <header>
-        <div id="headerTitel">
-        QM-System
-        </div>
-        <div>
-            <img id="Logo" src="~/images/muerwiker.jpg" />
-        </div>
-    </header>
+<body>         
     <main>
-        <section>
+        <section class="section_top">
             <nav>
-                <div class="menuleft">
-                    <h3 id="h3">Menü</h3>
-                    <ul>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="Neuigkeiten">Neuigkeiten</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="Veraenderungen">Veränderungen</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="Aufgaben">Aufgaben</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="ChangeRequests">Änderungsantrag</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li class="li" ><a class="linkesMenu" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <div style="width:auto;height:80px">
+                    <ul style="height:80px;">
+                        <li><a href="@Url.Action("Index", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Index") ? "class=nav_selected" :  "")>Home</a></li>
+                        <li><a href="@Url.Action("Neuigkeiten", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Neuigkeiten") ? "class=nav_selected" :  "")>Neuigkeiten</a></li>
+                        <li><a href="@Url.Action("Veraenderungen", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Veraenderungen") ? "class=nav_selected" :  "")>Veränderungen</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Aufgaben">Aufgaben</a></li>
+                        <li><a href="@Url.Action("ChangeRequests", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("ChangeRequests") ? "class=nav_selected" :  "")>Änderungsantrag</a></li>
+                        <li><a href="@Url.Action("About", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("About") ? "class=nav_selected" :  "")>About</a></li>
+                        <li><a href="@Url.Action("Contact", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Contact") ? "class=nav_selected" :  "")>Contact</a></li>
+                        <li style="float:right"><img id="Logo" src="~/images/muerwiker.jpg"/></li>
                     </ul>
                 </div>
             </nav>
         </section>
 
-        <section>
+        <section class="section_body">
             @RenderBody()
         </section>
     </main>
-    <footer>
+    <footer style="text-align:center">
         <hr />
-        <p>&copy; 2018 - Mürwiker Werkstätten GmbH</p>
+        <p style="float:right;margin-right:4px;text-align:center">&copy; 2018 - Mürwiker Werkstätten GmbH</p>
 
-    </footer>
-
+    @*</footer>
     <partial name="_CookieConsentPartial" />
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -77,7 +65,8 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-    @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)*@
+        </footer>
 </body>
 
 

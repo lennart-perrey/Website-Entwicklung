@@ -1,90 +1,45 @@
 * {
     box-sizing:border-box;
 }
-body{
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 96vh;
     margin: 0px;
-}
-
-/*Menü auf der linken Seite*/
-.menuleft {
-    float: left;
-    padding-top:0px;
-    padding-left:0px;
-    background-color: #15207C;
-    background: linear-gradient(to bottom, #15207C, white);
-    font-size: 12pt;
-    font-weight: normal;
     font-family: Arial;
-    color: white;
-    width: 200px;
-    height: 650px;
+    font-size: 18px;
 }
 
-/*Überschrift im linken Menü*/
-#h3 {
-    text-decoration: underline;
-    margin-top: 15px;
-    margin-left: 20px;
-    text-align: left;
+main{
+    height: 96vh;
 }
 
-/*Section Ausrichtung und Höhe*/
-section {
-    /*padd
-    padding-left: 4px;
-    margin: 5px;
-    margin-top: 0px;
-    margin-right: 10px;*/
-    float: left;
-    /*border: solid;*/
-    /*width: 100%;*/
-    height: auto;
+.section_top {
+    height: 80px;
 }
+
+.section_body {
+    height: 93%;
+}
+
+footer {
+    height: 3%;
+}
+
 
 /*Logo größe*/
 #Logo{
-    width: 210px;
-    height: 40px;
+    width: 443px;
+    height: 80px;
     float:right;
 }
 
-/*Header Größe und Farbe*/
-header {
-    height: 40px;
-    overflow: hidden;
-    background-color: #15207C;
-    font-size: 30px;
-    color: white;
-}
-/*Footer*/
-footer {
-    position: page;
-    left: 0;
-    bottom: 0;
-    width: 100%;    
-    height: 20px;
-    text-align:right;
-}
-
-/*Link Farbe weiß*/
-a.linkesMenu {
-    color: white;
-    text-decoration: none;
-    text-align: left;
-}
-
-
-#headerTitel {
-    float:left;
-    margin-left: 20px;
-}
-
-/*Vorgaben für die Main Daten*/
-main {
-    float: left;
-    display: flex;
-    align-items: stretch;
-    width: 100%;
+p{
+    font-size: 14px;
+    font-weight:bold;
 }
 
 /*Hauptseiten Felder*/
@@ -96,54 +51,63 @@ iframe {
     margin-right: 5px;
     float: left;
     width: 100%;
-    height: 300px;
+    height: 50%;
     overflow: hidden;
-    
 }
+
 
 /*Felder in 2 Spalten*/
 .row {
     display: flex;
     align-items: stretch;
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 
-
-
-/*.column {
-    float: left;
-}*/
-
-/*.title {
-    width: 90%;
-}*/
-
-
-
 .left, .right{
-    padding: 8px;
-    padding-right: 4px;
+    padding: 2px;
+    padding-right:2px;
     width: 50%;
+    margin:8px;
 }
-        
 
-/*#h1 {
-    text-decoration: underline;
-    margin-top: 0px;
-}*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(26, 28, 138, 0.65);
+    font-size: 24px;
+}
 
-/*header {
-    font-size: 14pt;
+li {
+    float: left;
+    height: 80px;
+    text-align: center;
+}
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-family: Arial;
+        text-align:center;
+    }
+
+        li a:hover {
+            font-weight: bold;
+            height: 80px;
+            background-color: white;
+            color: #1A1C8A;
+            font-size: 28px;
+        }
+
+.nav_selected {
     font-weight: bold;
-    font-family: Arial;
-    background-color: black;
-    color: white;
-}*/
-
-/*aside {
-    font-size: 12pt;
-    font-family: Arial;
-    height: 100%;
-}*/
-
+    height: 80px;
+    background-color: white;
+    color: #1A1C8A;
+    font-size: 28px;
+}
