@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{F63D7356-BD49-46D6-BAAA-04911593B5D7}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QMSystem/Views/Home/ChangeRequests.cshtml">
+    <Files>
+      <File FileName="QMSystem/Views/Shared/_Layout.cshtml" Line="24" Column="46" />
+      <File FileName="QMSystem/Program.cs" Line="17" Column="1" />
+      <File FileName="QMSystem/wwwroot/css/Style.css" Line="21" Column="14" />
+      <File FileName="QMSystem/Views/Home/ChangeRequests.cshtml" Line="23" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.QMSystem PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

@@ -7,22 +7,22 @@ html {
 }
 
 body {
-    height: 96vh;
+    height: 92vh;
     margin: 0px;
     font-family: Arial;
     font-size: 18px;
 }
 
 main{
-    height: 96vh;
+    height: 92vh;
 }
 
 .section_top {
-    height: 80px;
+    height: 60px;
 }
 
 .section_body {
-    height: 93%;
+    height: 90%;
 }
 
 footer {
@@ -32,8 +32,8 @@ footer {
 
 /*Logo größe*/
 #Logo{
-    width: 443px;
-    height: 80px;
+    width: 332px;
+    height: 60px;
     float:right;
 }
 
@@ -77,12 +77,12 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: rgba(26, 28, 138, 0.65);
-    font-size: 24px;
+    font-size: 20px;
 }
 
 li {
     float: left;
-    height: 80px;
+    height: 60px;
     text-align: center;
 }
 
@@ -98,16 +98,16 @@ li {
 
         li a:hover {
             font-weight: bold;
-            height: 80px;
+            height: 60px;
             background-color: white;
             color: #1A1C8A;
-            font-size: 28px;
+            font-size: 24px;
         }
 
 .nav_selected {
     font-weight: bold;
-    height: 80px;
+    height: 60px;
     background-color: white;
     color: #1A1C8A;
-    font-size: 28px;
+    font-size: 24px;
 }
