@@ -2,11 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using QMSystem.Models;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace QMSystem.Controllers
 {
     public class HomeController : Controller
     {
+
+        string savePath = @"C:/Temp/uploads/";
+
         private DocumentContext _context;
 
         public HomeController(DocumentContext context)
@@ -65,16 +72,22 @@ namespace QMSystem.Controllers
 
         //Add Document to DB
         [HttpPost]
-        public ActionResult Create(string ChangeTitle, string Beschreibung, string myFile)
+        public async Task<IActionResult> Create(string ChangeTitle, string Beschreibung, IFormFile myFile)
         {
             Documents document = new Documents();
-            document.DocumentName = myFile;
-            document.DocumentPath = "C:/TestPath";
+            document.DocumentName = myFile.FileName;
+            //document.DocumentPath = "C:/TestPath";
             document.UserName = Environment.UserName;
             document.RequestDate = DateTime.Now;
 
             _context.Documents.Add(document);
             _context.SaveChanges();
+            savePath += myFile.FileName;
+
+            using (var stream = new FileStream(savePath, FileMode.Create))
+            {
+                await myFile.CopyToAsync(stream);
+            }
 
             return RedirectToAction("Index", "Home");
         }

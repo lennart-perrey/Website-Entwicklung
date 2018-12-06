@@ -5,29 +5,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-
-</style>
-
-<script>
-    var filePath
-    function myFunction() {
-
-    }
-</script>
-
-@using (Html.BeginForm("Create", "Home", new { enctype = "text/plain"}))
+@*@using (Html.BeginForm("Create", "Home", new { enctype = "multipart/form-data" }))
 {
-<div style="margin-left:10px">
-    <p>Titel der Änderung</p>
-    <input style="width: 200px;" type="text" name="ChangeTitle" id="ChangeTitle" />
+    <div style="margin-left:10px">
+        <p>Titel der Änderung</p>
+        <input style="width: 200px;" type="text" name="ChangeTitle" id="ChangeTitle" />
 
-    <p>Beschreibung der Änderung</p>
-    <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="80"></textarea>
-
-    <h2>Bitte Datei auswählen</h2>
-    <input type="file" name="myFile" id="myFile" size="50"><br /><br />
-</div>
+        <p>Beschreibung der Änderung</p>
+        <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="80"></textarea><br />
+        
+        <h2>Datei auswählen</h2>
+        <input type="file" name="myFile" id="myFile" size="50" /><br /><br />
+    </div>
 
     <button type="submit" class="btn" style="margin-left:10px">Antrag stellen</button>
-}
+}*@
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Create">
+        <div style="margin-left:10px">
+            <p>Titel der Änderung</p>
+            <input style="width: 200px;" type="text" name="ChangeTitle" id="ChangeTitle" />
+
+            <p>Beschreibung der Änderung</p>
+            <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="80"></textarea><br />
+
+            <h2>Datei auswählen</h2>
+            <input type="file" name="myFile" id="myFile" size="50" /><br /><br />
+        </div>
+        <button type="submit" class="btn" value="upload" style="margin-left:10px">Antrag stellen</button>
+    </form>
