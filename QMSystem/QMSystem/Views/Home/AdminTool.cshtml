@@ -1,0 +1,68 @@
+﻿@model List<QMSystem.Models.Documents>
+
+
+@{
+    ViewData["Title"] = "AdminTool";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<h2>Änderungsanträge</h2>
+<body>
+    <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+
+        <tr>
+            <th>Dokumentname</th>
+            <th>Dokumentpfad</th>
+            <th>Antragsdatum</th>
+            <th>Antragsteller</th>
+            <th>Betreff</th>
+            <th>Beschreibung</th>
+            <th>Freigabestatus</th>
+        </tr>
+
+        @foreach (Documents document in Model)
+        {
+            <tr>
+                <td>
+                    @document.DocumentName
+                </td>
+                <td>
+                    <a href="@document.DocumentPath">@document.DocumentPath</a>
+                </td>
+                <td>
+                    @document.RequestDate
+                </td>
+                <td>
+                    @document.UserName
+                </td>
+                <td>
+                    @document.Betreff
+                </td>
+                <td>
+                    @document.Anmerkungen
+                </td>
+                <td>
+                    <select class="form-control" id="Status" name="Status">
+                        <option>Nicht freigegeben</option>
+                        <option>Direkte Freigabe</option>
+                        <option>Weitergabe an GF</option>
+                        <option>Abgelehnt</option>
+                    </select>
+                </td>
+            </tr>
+        }
+    </table>
+</body>

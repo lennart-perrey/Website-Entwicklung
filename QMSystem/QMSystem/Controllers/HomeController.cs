@@ -12,7 +12,7 @@ namespace QMSystem.Controllers
     public class HomeController : Controller
     {
 
-        string savePath = @"C:/Temp/uploads/";
+        string savePath = @"C:\Temp\uploads\";
 
         private DocumentContext _context;
 
@@ -70,19 +70,31 @@ namespace QMSystem.Controllers
             return View();
         }
 
+        public ActionResult AdminTool()
+        {
+            List<Documents> documents = _context.Documents.ToList();
+            return View(documents);
+
+        }
+
         //Add Document to DB
         [HttpPost]
         public async Task<IActionResult> Create(string ChangeTitle, string Beschreibung, IFormFile myFile)
         {
+            savePath += myFile.FileName;
+
             Documents document = new Documents();
             document.DocumentName = myFile.FileName;
-            //document.DocumentPath = "C:/TestPath";
+            document.DocumentPath = savePath;
             document.UserName = Environment.UserName;
             document.RequestDate = DateTime.Now;
+            document.Betreff = ChangeTitle;
+            document.Anmerkungen = Beschreibung;
+            document.Freigabe = 0;
 
             _context.Documents.Add(document);
             _context.SaveChanges();
-            savePath += myFile.FileName;
+            
 
             using (var stream = new FileStream(savePath, FileMode.Create))
             {

@@ -25,9 +25,15 @@ namespace QMSystem.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Anmerkungen");
+
+                    b.Property<string>("Betreff");
+
                     b.Property<string>("DocumentName");
 
                     b.Property<string>("DocumentPath");
+
+                    b.Property<int>("Freigabe");
 
                     b.Property<DateTime>("RequestDate");
 

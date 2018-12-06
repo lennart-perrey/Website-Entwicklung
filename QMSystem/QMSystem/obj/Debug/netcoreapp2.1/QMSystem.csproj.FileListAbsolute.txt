@@ -150,3 +150,4 @@ C:\Users\kaipe\Downloads\Website Entwicklung\Website Entwicklung\QMSystem\QMSyst
 C:\Users\kaipe\Downloads\Website Entwicklung\Website Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.dll
 C:\Users\kaipe\Downloads\Website Entwicklung\Website Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.pdb
 C:\Users\kaipe\Downloads\Website Entwicklung\Website Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.csproj.CopyComplete
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\Razor\Views\Home\AdminTool.g.cshtml.cs

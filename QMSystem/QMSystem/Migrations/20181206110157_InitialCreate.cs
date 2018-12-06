@@ -17,7 +17,10 @@ namespace QMSystem.Migrations
                     DocumentName = table.Column<string>(nullable: true),
                     DocumentPath = table.Column<string>(nullable: true),
                     RequestDate = table.Column<DateTime>(nullable: false),
-                    UserName = table.Column<string>(nullable: true)
+                    UserName = table.Column<string>(nullable: true),
+                    Betreff = table.Column<string>(nullable: true),
+                    Anmerkungen = table.Column<string>(nullable: true),
+                    Freigabe = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
