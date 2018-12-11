@@ -64,7 +64,7 @@ using QMSystem.Models;
             WriteLiteral("\r\n<style>\r\n\r\n    td, th {\r\n        border: 1px solid #dddddd;\r\n        text-align: left;\r\n        padding: 8px;\r\n    }\r\n\r\n    tr:nth-child(even) {\r\n        background-color: #dddddd;\r\n    }\r\n</style>\r\n\r\n<h2>Änderungsanträge</h2>\r\n");
             EndContext();
             BeginContext(366, 1535, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3eaefddc126143f5b97ced3b84a58580", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f713418f4cf24ca3a691c202526fd2e3", async() => {
                 BeginContext(372, 434, true);
                 WriteLiteral(@"
     <table style=""font-family: arial, sans-serif; border-collapse: collapse; width: 100%;"">
@@ -161,7 +161,7 @@ WriteAttributeValue("", 1023, document.DocumentPath, 1023, 22, false);
                 WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    <select class=\"form-control\" id=\"Status\" name=\"Status\">\r\n                        ");
                 EndContext();
                 BeginContext(1566, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9a93820041bc45fcb90d0aff2e8818a1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93538b1cbbea4e93b9c64f724ee3a3ff", async() => {
                     BeginContext(1574, 17, true);
                     WriteLiteral("Nicht freigegeben");
                     EndContext();
@@ -181,7 +181,7 @@ WriteAttributeValue("", 1023, document.DocumentPath, 1023, 22, false);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1626, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8781d97bb12a445b88c9b43bf5e307b3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41d05cb504214a4c802ded4ce0cf9e69", async() => {
                     BeginContext(1634, 16, true);
                     WriteLiteral("Direkte Freigabe");
                     EndContext();
@@ -201,7 +201,7 @@ WriteAttributeValue("", 1023, document.DocumentPath, 1023, 22, false);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1685, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db86104d424f43588715a08627109969", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0a1e8147d0f410cb486f5f1df729a60", async() => {
                     BeginContext(1693, 16, true);
                     WriteLiteral("Weitergabe an GF");
                     EndContext();
@@ -221,7 +221,7 @@ WriteAttributeValue("", 1023, document.DocumentPath, 1023, 22, false);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1744, 26, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f9fb9ebb3f814c7b9983844a538283a7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d7690bc3cd244ec8b82b152bc70dc27", async() => {
                     BeginContext(1752, 9, true);
                     WriteLiteral("Abgelehnt");
                     EndContext();
