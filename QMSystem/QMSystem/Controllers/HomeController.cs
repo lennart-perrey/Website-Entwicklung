@@ -76,7 +76,18 @@ namespace QMSystem.Controllers
             return View(documents);
 
         }
+        public void ChangeStatus(int DocumentId, int Freigabe)
+        {
+            string Query="UPDATE Documents SET Freigabe=Freigabe where DocumentId==DocumentId";
+           
+            Documents document = new Documents();
+            if (document.DocumentId == DocumentId)
+;            {
+                document.Freigabe = Freigabe;
+            }
 
+            _context.SaveChanges();
+        }
         //Add Document to DB
         [HttpPost]
         public async Task<IActionResult> Create(string ChangeTitle, string Beschreibung, IFormFile myFile)

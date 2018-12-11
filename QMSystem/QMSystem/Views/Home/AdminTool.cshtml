@@ -23,7 +23,7 @@
 <body>
     <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 
-        <tr>
+        <tr style="font-size:16px; text-align:center">
             <th>Dokumentname</th>
             <th>Dokumentpfad</th>
             <th>Antragsdatum</th>
@@ -31,7 +31,7 @@
             <th>Betreff</th>
             <th>Beschreibung</th>
             <th>Freigabestatus</th>
-        </tr>
+        </trstyle="font-size:16px>
 
         @foreach (Documents document in Model)
         {
@@ -60,6 +60,7 @@
                         <option>Direkte Freigabe</option>
                         <option>Weitergabe an GF</option>
                         <option>Abgelehnt</option>
+                      
                     </select>
                 </td>
             </tr>
