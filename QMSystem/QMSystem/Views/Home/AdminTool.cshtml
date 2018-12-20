@@ -35,9 +35,10 @@
         <th>Beschreibung</th>
         <th>Freigabestatus</th>
     </tr>
-
+    @{ var index = 0; }
     @foreach (Documents document in Model)
     {
+        index++;
         <tr>
             <td>
                 @document.DocumentName
@@ -62,7 +63,7 @@
 
                 <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
                     <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
-                    <input type="hidden" id="Freigabe" name="Freigabe" value="@document.Freigabe">
+                    <input type="hidden" id="Freigabe_@index" name="Freigabe" value="@document.Freigabe">
                     <select class="form-control" id="Status" name="Status">
 
 
@@ -73,38 +74,7 @@
 
                     </select>
 
-                    <script>
-                        var optionName0 = "sel0_";
-                        var optionName1 = "sel1_";
-                        var optionName2 = "sel2_";
-                        var optionName3 = "sel3_";
 
-
-                        if (document.getElementById("Freigabe").value == 0) {
-
-                            document.getElementById(optionName0.concat(document.getElementById("documentID").value)).selected = true;
-                            alert("bin in Option 0");
-                        }
-
-
-                        if (document.getElementById("Freigabe").value == 1) {
-
-                            document.getElementById(optionName1.concat(document.getElementById("documentID").value)).selected = true;
-                            alert("bin in Option 1");
-                        }
-
-                        if (document.getElementById("Freigabe").value == 2) {
-
-                            document.getElementById(optionName2.concat(document.getElementById("documentID").value)).selected = true;
-                            alert("bin in Option 2");
-                        }
-
-                        if (document.getElementById("Freigabe").value == 3) {
-
-                            document.getElementById(optionName3.concat(document.getElementById("documentID").value)).selected = true;
-                            alert("bin in Option 3");
-                        }
-                    </script>
 
 
                     <input type="submit" value="Submit Change Request">
@@ -113,5 +83,41 @@
         </tr>
     }
 </table>
+
+<script>
+
+    var getAllElementsWithFreigabe = document.getElementsByName("Freigabe");
+
+
+    var optionName0 = "sel0_";
+    var optionName1 = "sel1_";
+    var optionName2 = "sel2_";
+    var optionName3 = "sel3_";
+
+    if (document.getElementById("Freigabe").value == 0) {
+
+        document.getElementById(optionName0.concat(document.getElementById("documentID").value)).selected = true;
+        alert("bin in Option 0");
+    }
+
+
+    if (document.getElementById("Freigabe").value == 1) {
+
+        document.getElementById(optionName1.concat(document.getElementById("documentID").value)).selected = true;
+        alert("bin in Option 1");
+    }
+
+    if (document.getElementById("Freigabe").value == 2) {
+
+        document.getElementById(optionName2.concat(document.getElementById("documentID").value)).selected = true;
+        alert("bin in Option 2");
+    }
+
+    if (document.getElementById("Freigabe").value == 3) {
+
+        document.getElementById(optionName3.concat(document.getElementById("documentID").value)).selected = true;
+        alert("bin in Option 3");
+    }
+</script>
 
 
