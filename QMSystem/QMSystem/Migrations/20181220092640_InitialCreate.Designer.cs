@@ -10,8 +10,8 @@ using QMSystem.Models;
 namespace QMSystem.Migrations
 {
     [DbContext(typeof(DocumentContext))]
-    [Migration("20181206121918_InitialCreate1")]
-    partial class InitialCreate1
+    [Migration("20181220092640_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
