@@ -190,3 +190,9 @@ C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\o
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.dll
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.pdb
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.csproj.CopyComplete
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\System.DirectoryServices.AccountManagement.dll
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\System.DirectoryServices.dll
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\System.DirectoryServices.Protocols.dll
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\de\System.DirectoryServices.resources.dll
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\de\System.DirectoryServices.AccountManagement.resources.dll
+C:\Users\Marcel\Documents\WPM\Website-Entwicklung\QMSystem\QMSystem\bin\Debug\netcoreapp2.1\de\System.DirectoryServices.Protocols.resources.dll

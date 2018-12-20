@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace QMSystem.Controllers
 {
     public class HomeController : Controller
@@ -72,17 +73,27 @@ namespace QMSystem.Controllers
 
         public ActionResult AdminTool()
         {
-            List<Documents> documents = _context.Documents.ToList();
-            return View(documents);
+            //User user = new User();
+            //if (user.checkPermission(Environment.UserName, "MWInfoB-QMB") == true)
+            //{
+                List<Documents> documents = _context.Documents.ToList();
+                return View(documents);
 
+                // true } else { // false }
+
+
+            //}
+            //return null;
         }
+
         public void ChangeStatus(int DocumentId, int Freigabe)
         {
-            string Query="UPDATE Documents SET Freigabe=Freigabe where DocumentId==DocumentId";
-           
+            string Query = "UPDATE Documents SET Freigabe=Freigabe where DocumentId==DocumentId";
+
             Documents document = new Documents();
             if (document.DocumentId == DocumentId)
-;            {
+                ;
+            {
                 document.Freigabe = Freigabe;
             }
 
@@ -98,6 +109,7 @@ namespace QMSystem.Controllers
             document.DocumentName = myFile.FileName;
             document.DocumentPath = savePath;
             document.UserName = Environment.UserName;
+
             document.RequestDate = DateTime.Now;
             document.Betreff = ChangeTitle;
             document.Anmerkungen = Beschreibung;
@@ -105,7 +117,7 @@ namespace QMSystem.Controllers
 
             _context.Documents.Add(document);
             _context.SaveChanges();
-            
+
 
             using (var stream = new FileStream(savePath, FileMode.Create))
             {

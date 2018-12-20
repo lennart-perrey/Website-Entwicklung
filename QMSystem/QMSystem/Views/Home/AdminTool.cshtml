@@ -31,7 +31,7 @@
             <th>Betreff</th>
             <th>Beschreibung</th>
             <th>Freigabestatus</th>
-        </trstyle="font-size:16px>
+        </tr>
 
         @foreach (Documents document in Model)
         {
@@ -40,7 +40,9 @@
                     @document.DocumentName
                 </td>
                 <td>
-                    <a href="@document.DocumentPath">@document.DocumentPath</a>
+
+                    <a href="@document.DocumentPath" target="_blank" Link>Dokument öffnen</a>
+                    
                 </td>
                 <td>
                     @document.RequestDate
@@ -62,8 +64,51 @@
                         <option>Abgelehnt</option>
                       
                     </select>
+                    <button type="button" onclick="Abgabe()">Änderung speichern</button>
                 </td>
             </tr>
         }
     </table>
 </body>
+
+<script>
+    window.URL = window.URL || window.webkitURL;
+
+    const fileSelect = document.getElementById("fileSelect"),
+        fileElem = document.getElementById("fileElem"),
+        fileList = document.getElementById("fileList");
+
+    fileSelect.addEventListener("click", function (e) {
+        if (fileElem) {
+            fileElem.click();
+        }
+        e.preventDefault(); // prevent navigation to "#"
+    }, false);
+
+    function handleFiles(files) {
+        if (!files.length) {
+            fileList.innerHTML = "<p>No files selected!</p>";
+        } else {
+            fileList.innerHTML = "";
+            const list = document.createElement("ul");
+            fileList.appendChild(list);
+            for (let i = 0; i < files.length; i++) {
+                const li = document.createElement("li");
+                list.appendChild(li);
+
+                const img = document.createElement("img");
+                img.src = window.URL.createObjectURL(files[i]);
+                img.height = 60;
+                img.onload = function () {
+                    window.URL.revokeObjectURL(this.src);
+                }
+                li.appendChild(img);
+                const info = document.createElement("span");
+                info.innerHTML = files[i].name + ": " + files[i].size + " bytes";
+                li.appendChild(info);
+            }
+        }
+    }
+
+
+</script>

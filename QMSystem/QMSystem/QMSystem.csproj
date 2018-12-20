@@ -14,4 +14,13 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.DirectoryServices">
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\System.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement">
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\System.DirectoryServices.AccountManagement.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
