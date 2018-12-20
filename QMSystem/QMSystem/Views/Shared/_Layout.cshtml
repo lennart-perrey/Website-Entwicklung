@@ -26,10 +26,10 @@
                 <div style="width:auto;height:80px">
                     <ul style="height:80px;">
                         <li><a href="@Url.Action("Index", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Index") ? "class=nav_selected" :  "")>Home</a></li>
-                        <li><a href="@Url.Action("Neuigkeiten", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Neuigkeiten") ? "class=nav_selected" :  "")>Neuigkeiten</a></li>
-                        <li><a href="@Url.Action("Veraenderungen", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Veraenderungen") ? "class=nav_selected" :  "")>Veränderungen</a></li>
-                        <li><a href="@Url.Action("AdminTool", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("AdminTool") ? "class=nav_selected" :  "")>AdminTool</a></li>
-                        <li><a href="@Url.Action("ChangeRequests", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("ChangeRequests") ? "class=nav_selected" :  "")>Änderungsantrag</a></li>
+                        @*<li><a href="@Url.Action("Neuigkeiten", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Neuigkeiten") ? "class=nav_selected" :  "")>Neuigkeiten</a></li>*@
+                        @*<li><a href="@Url.Action("Veraenderungen", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Veraenderungen") ? "class=nav_selected" :  "")>Veränderungen</a></li>*@
+                        <li><a href="@Url.Action("ChangeRequests", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("ChangeRequests") ? "class=nav_selected" : "")>Änderungsantrag</a></li>
+                        <li><a href="@Url.Action("AdminTool", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("AdminTool") ? "class=nav_selected" :  "")>AdminTool</a></li>                
                         <li><a href="@Url.Action("About", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("About") ? "class=nav_selected" :  "")>About</a></li>
                         <li><a href="@Url.Action("Contact", "Home")" @(ViewContext.RouteData.Values["action"].ToString().Equals("Contact") ? "class=nav_selected" :  "")>Contact</a></li>
                         <li style="float:right"><img id="Logo" src="~/images/muerwiker.png"/></li>
