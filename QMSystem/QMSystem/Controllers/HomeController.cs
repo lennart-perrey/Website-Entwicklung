@@ -13,7 +13,6 @@ namespace QMSystem.Controllers
     {
 
         string savePath = @"C:\Temp\uploads\";
-        string freigabePfad = @"C:\Temp\freigabe\";
 
         private DocumentContext _context;
 
@@ -77,50 +76,18 @@ namespace QMSystem.Controllers
             return View(documents);
 
         }
-
-        public ActionResult UpdateState(string documentID, string status)
+        public void ChangeStatus(int DocumentId, int Freigabe)
         {
-
-            List<Documents> documents = _context.Documents.ToList();
-            foreach (Documents document in documents)
-            {
-               
-
-                if (document.DocumentId == Convert.ToInt32(documentID))
-
-                {
-                    int Freigabe = 0;
-
-                    if (status == "Direkte Freigabe")
-                    {
-                        Freigabe = 1;
-                        freigabePfad += document.DocumentName;
-                        if(document.DocumentPath != freigabePfad)
-                        {
-                            System.IO.File.Move(document.DocumentPath, freigabePfad);
-                        }
-
-                        document.DocumentPath = freigabePfad;
-                    }
-                    else if (status == "Weitergabe an GF")
-                    {
-                        Freigabe = 2;
-                    }
-                    else if (status == "Abgelehnt")
-                    {
-                        Freigabe = 3;
-                    }
-
-                    document.Freigabe = Freigabe;
-
-                    _context.Documents.Update(document);
-                    _context.SaveChanges();
-                }
+            string Query="UPDATE Documents SET Freigabe=Freigabe where DocumentId==DocumentId";
+           
+            Documents document = new Documents();
+            if (document.DocumentId == DocumentId)
+;            {
+                document.Freigabe = Freigabe;
             }
 
-            return RedirectToAction("AdminTool", "Home");
+            _context.SaveChanges();
         }
-
         //Add Document to DB
         [HttpPost]
         public async Task<IActionResult> Create(string ChangeTitle, string Beschreibung, IFormFile myFile)
