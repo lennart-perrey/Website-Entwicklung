@@ -21,49 +21,66 @@
 
 <h2>Änderungsanträge</h2>
 <body>
-    <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
+        <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 
-        <tr style="font-size:16px; text-align:center">
-            <th>Dokumentname</th>
-            <th>Dokumentpfad</th>
-            <th>Antragsdatum</th>
-            <th>Antragsteller</th>
-            <th>Betreff</th>
-            <th>Beschreibung</th>
-            <th>Freigabestatus</th>
-        </trstyle="font-size:16px>
+            <tr style="font-size:16px; text-align:center">
+                <th>Dokumentname</th>
+                <th>Dokumentpfad</th>
+                <th>Antragsdatum</th>
+                <th>Antragsteller</th>
+                <th>Betreff</th>
+                <th>Beschreibung</th>
+                <th>Freigabestatus</th>
+                </trstyle="font-size:16px>
 
-        @foreach (Documents document in Model)
-        {
-            <tr>
-                <td>
-                    @document.DocumentName
-                </td>
-                <td>
-                    <a href="@document.DocumentPath">@document.DocumentPath</a>
-                </td>
-                <td>
-                    @document.RequestDate
-                </td>
-                <td>
-                    @document.UserName
-                </td>
-                <td>
-                    @document.Betreff
-                </td>
-                <td>
-                    @document.Anmerkungen
-                </td>
-                <td>
-                    <select class="form-control" id="Status" name="Status">
-                        <option>Nicht freigegeben</option>
-                        <option>Direkte Freigabe</option>
-                        <option>Weitergabe an GF</option>
-                        <option>Abgelehnt</option>
-                      
-                    </select>
-                </td>
-            </tr>
-        }
-    </table>
+                @foreach (Documents document in Model)
+                {
+                <tr>
+                    <td>
+                        @document.DocumentName
+                    </td>
+                    <td>
+                        <a href="@document.DocumentPath">@document.DocumentPath</a>
+                        <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
+                    </td>
+                    <td>
+                        @document.RequestDate
+                    </td>
+                    <td>
+                        @document.UserName
+                    </td>
+                    <td>
+                        @document.Betreff
+                    </td>
+                    <td>
+                        @document.Anmerkungen
+                    </td>
+                    <td>
+                        @if(document.Freigabe == 1)
+                        {
+
+                        }
+                        else if(document.Freigabe == 2)
+                        {
+
+                        }
+                        else if (document.Freigabe == 3)
+                        {
+
+                        }
+                        <select class="form-control" id="Status" name="Status">
+                            <option>Nicht freigegeben</option>
+                            <option>Direkte Freigabe</option>
+                            <option>Weitergabe an GF</option>
+                            <option>Abgelehnt</option>
+
+                        </select>
+                    </td>
+                </tr>
+            }
+            </table>
+
+        <input type="submit" value="Submit Change Request">
+        </form>
 </body>
