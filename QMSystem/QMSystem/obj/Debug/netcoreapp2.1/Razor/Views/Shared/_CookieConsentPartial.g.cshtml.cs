@@ -61,7 +61,7 @@ using Microsoft.AspNetCore.Http.Features;
             WriteLiteral("\r\n");
             EndContext();
 #line 3 "C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\Views\Shared\_CookieConsentPartial.cshtml"
-  
+
     var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
     var showBanner = !consentFeature?.CanTrack ?? false;
     var cookieString = consentFeature?.CreateConsentCookie();
@@ -97,7 +97,7 @@ using Microsoft.AspNetCore.Http.Features;
                     ");
             EndContext();
             BeginContext(1234, 92, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6eb02fca8f2c496fb4d15f57764ff8a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93616cb9ea514ca6b771b43576103531", async() => {
                 BeginContext(1312, 10, true);
                 WriteLiteral("Learn More");
                 EndContext();
