@@ -19,70 +19,99 @@
     }
 </style>
 
+
+
 <h2>Änderungsanträge</h2>
-<body>
-   
-        <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 
-            <tr style="font-size:16px; text-align:center">
-                <th>Dokumentname</th>
-                <th>Dokumentpfad</th>
-                <th>Antragsdatum</th>
-                <th>Antragsteller</th>
-                <th>Betreff</th>
-                <th>Beschreibung</th>
-                <th>Freigabestatus</th>
-            </tr>
 
-            @foreach (Documents document in Model)
-            {
-                <tr>
-                    <td>
-                        @document.DocumentName
-                    </td>
-                    <td>
-                        <a href="@document.DocumentPath">@document.DocumentPath</a>
-                        
-                    </td>
-                    <td>
-                        @document.RequestDate
-                    </td>
-                    <td>
-                        @document.UserName
-                    </td>
-                    <td>
-                        @document.Betreff
-                    </td>
-                    <td>
-                        @document.Anmerkungen
-                    </td>
-                    <td>
-                        @if (document.Freigabe == 1)
-                        {
+<table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 
+    <tr style="font-size:16px; text-align:center">
+        <th>Dokumentname</th>
+        <th>Dokumentpfad</th>
+        <th>Antragsdatum</th>
+        <th>Antragsteller</th>
+        <th>Betreff</th>
+        <th>Beschreibung</th>
+        <th>Freigabestatus</th>
+    </tr>
+
+    @foreach (Documents document in Model)
+    {
+        <tr>
+            <td>
+                @document.DocumentName
+            </td>
+            <td>
+                <a href="@document.DocumentPath" target="_blank" Link>@document.DocumentPath</a>
+
+            </td>
+            <td>
+                @document.RequestDate
+            </td>
+            <td>
+                @document.UserName
+            </td>
+            <td>
+                @document.Betreff
+            </td>
+            <td>
+                @document.Anmerkungen
+            </td>
+            <td>
+
+                <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
+                    <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
+                    <input type="hidden" id="Freigabe" name="Freigabe" value="@document.Freigabe">
+                    <select class="form-control" id="Status" name="Status">
+
+
+                        <option id="sel0_@document.DocumentId">Nicht freigegeben</option>
+                        <option id="sel1_@document.DocumentId">Direkte Freigabe</option>
+                        <option id="sel2_@document.DocumentId">Weitergabe an GF</option>
+                        <option id="sel3_@document.DocumentId">Abgelehnt</option>
+
+                    </select>
+
+                    <script>
+                        var optionName0 = "sel0_";
+                        var optionName1 = "sel1_";
+                        var optionName2 = "sel2_";
+                        var optionName3 = "sel3_";
+
+
+                        if (document.getElementById("Freigabe").value == 0) {
+
+                            document.getElementById(optionName0.concat(document.getElementById("documentID").value)).selected = true;
+                            alert("bin in Option 0");
                         }
-                        else if (document.Freigabe == 2)
-                        {
 
+
+                        if (document.getElementById("Freigabe").value == 1) {
+
+                            document.getElementById(optionName1.concat(document.getElementById("documentID").value)).selected = true;
+                            alert("bin in Option 1");
                         }
-                        else if (document.Freigabe == 3)
-                        {
 
+                        if (document.getElementById("Freigabe").value == 2) {
+
+                            document.getElementById(optionName2.concat(document.getElementById("documentID").value)).selected = true;
+                            alert("bin in Option 2");
                         }
-                        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
-                            <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
-                            <select class="form-control" id="Status" name="Status">
-                                <option>Nicht freigegeben</option>
-                                <option>Direkte Freigabe</option>
-                                <option>Weitergabe an GF</option>
-                                <option>Abgelehnt</option>
 
-                            </select>
-                            <input type="submit" value="Submit Change Request">
-                        </form>
-                    </td>
-                </tr>
-            }
-        </table>
+                        if (document.getElementById("Freigabe").value == 3) {
 
-</body>
+                            document.getElementById(optionName3.concat(document.getElementById("documentID").value)).selected = true;
+                            alert("bin in Option 3");
+                        }
+                    </script>
+
+
+                    <input type="submit" value="Submit Change Request">
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+
