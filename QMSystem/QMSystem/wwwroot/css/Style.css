@@ -1,5 +1,5 @@
 * {
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -13,7 +13,7 @@ body {
     font-size: 12px;
 }
 
-main{
+main {
     height: 92vh;
 }
 
@@ -31,15 +31,15 @@ footer {
 
 
 /*Logo größe*/
-#Logo{
+#Logo {
     width: 432px;
     height: 80px;
-    float:right;
+    float: right;
 }
 
-p{
+p {
     font-size: 14px;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 /*Hauptseiten Felder*/
@@ -64,11 +64,11 @@ iframe {
     width: 100%;
 }
 
-.left, .right{
+.left, .right {
     padding: 2px;
-    padding-right:2px;
+    padding-right: 2px;
     width: 50%;
-    margin:8px;
+    margin: 8px;
 }
 
 ul {
@@ -123,3 +123,4 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+

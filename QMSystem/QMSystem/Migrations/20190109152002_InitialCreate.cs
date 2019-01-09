@@ -20,7 +20,8 @@ namespace QMSystem.Migrations
                     UserName = table.Column<string>(nullable: true),
                     Betreff = table.Column<string>(nullable: true),
                     Anmerkungen = table.Column<string>(nullable: true),
-                    Freigabe = table.Column<int>(nullable: false)
+                    Freigabe = table.Column<int>(nullable: false),
+                    ReleaseDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

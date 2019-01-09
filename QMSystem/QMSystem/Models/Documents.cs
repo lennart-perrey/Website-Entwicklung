@@ -38,6 +38,7 @@ namespace QMSystem.Models
         public string Betreff { get; set; }
         public string Anmerkungen { get; set; }
         public int Freigabe { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
     }
 }

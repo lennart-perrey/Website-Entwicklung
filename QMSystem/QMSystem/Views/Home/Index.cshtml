@@ -1,21 +1,9 @@
-﻿
+﻿@model QMSystem.Models.User
+
 @{
     ViewData["Title"] = "Startseite";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<div class="row">
-    <div class="column left">
-        <iframe src="~/Home/Neuigkeiten" scrolling="no"></iframe>
-
-        <iframe src="~/Home/RelevanteProzesse" scrolling="no"></iframe>
-
-    </div>
-
-    <div class=" column right">
-        <iframe src="~/Home/Veraenderungen" scrolling="no"></iframe>
-
-        <iframe src="~/Home/Aufgaben" scrolling="no"></iframe>
-    </div>
-</div>*@
+<h2 style="margin:10px;">Hallo @Model.UserName, viel Spaß mit Ihrem neuen QM-System</h2>
 

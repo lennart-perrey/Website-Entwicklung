@@ -1,0 +1,149 @@
+﻿@model List<QMSystem.Models.Documents>
+
+
+@{
+    ViewData["Title"] = "AdminTool";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        margin: 10px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    #myInput {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 4px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+        margin: 10px;
+    }
+    #myTable{
+        margin-left:10px;
+     }
+
+    
+</style>
+
+<h2 style="margin: 10px;">Änderungsanträge</h2>
+<input type="text" id="myInput" onkeyup="search()" placeholder="Suche nach dem Namen" title="Gebe einen Namen ein">
+<br />
+<table id="myTable" style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+
+    <tr style="font-size:16px; text-align:center">
+        <th onclick="sortTable(0)">Dokumentname</th>
+        <th onclick="sortTable(1)">Dokumentpfad</th>
+        <th onclick="sortTable(2)">Antragsdatum</th>
+        <th onclick="sortTable(3)">Antragsteller</th>
+        <th onclick="sortTable(4)">Betreff</th>
+        <th onclick="sortTable(5)">Beschreibung</th>
+        <th onclick="sortTable(6)">Freigabedatum</th>
+    </tr>
+
+    @foreach (Documents document in Model)
+    {
+
+        if (document.Freigabe == 4)
+        {
+            <tr>
+                <td>
+                    @document.DocumentName
+                </td>
+                <td>
+                    <a href="@document.DocumentPath" target="_blank" Link>@document.DocumentPath</a>
+
+                </td>
+                <td>
+                    @document.RequestDate
+                </td>
+                <td>
+                    @document.UserName
+                </td>
+                <td>
+                    @document.Betreff
+                </td>
+                <td>
+                    @document.Anmerkungen
+                </td>
+                <td>
+                    @document.ReleaseDate
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<script>
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable");
+        switching = true;
+        dir = "asc";
+
+        while (switching) {
+
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount++;
+            } else {
+
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+
+    function search() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+</script>

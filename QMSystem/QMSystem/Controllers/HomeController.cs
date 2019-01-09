@@ -12,8 +12,8 @@ namespace QMSystem.Controllers
     public class HomeController : Controller
     {
 
-        string savePath = @"C:\Temp\uploads\";
-        string freigabePfad = @"C:\Temp\freigabe\";
+        string savePath = @"C:\tmp\uploads\";
+        string freigabePfad = @"C:\tmp\freigabe\";
 
         private DocumentContext _context;
 
@@ -24,7 +24,9 @@ namespace QMSystem.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            User user = new User();
+            user.UserName = Environment.UserName;
+            return View(user);
         }
 
         public ActionResult About()
@@ -41,36 +43,17 @@ namespace QMSystem.Controllers
             return View();
         }
 
-        public ActionResult Neuigkeiten()
+        public ActionResult History()
         {
-            return View();
-        }
-
-        public ActionResult Aufgaben()
-        {
-            return View();
+            List<Documents> documents = _context.Documents.ToList();
+            return View(documents);
         }
 
         public ActionResult ChangeRequests()
         {
             return View();
         }
-
-        public ActionResult Veraenderungen()
-        {
-            return View();
-        }
-
-        public ActionResult RelevanteProzesse()
-        {
-            return View();
-        }
-
-        public ActionResult RelevanteDokumente()
-        {
-            return View();
-        }
-
+        
         public ActionResult AdminTool()
         {
             List<Documents> documents = _context.Documents.ToList();
@@ -94,7 +77,7 @@ namespace QMSystem.Controllers
                         freigabePfad += document.DocumentName;
                         if (document.DocumentPath != freigabePfad)
                         {
-                            System.IO.File.Move(document.DocumentPath, freigabePfad);
+                            System.IO.File.Copy(document.DocumentPath, freigabePfad, true);
                         }
 
                         document.DocumentPath = freigabePfad;
@@ -106,6 +89,12 @@ namespace QMSystem.Controllers
                     else if (status == "Abgelehnt")
                     {
                         Freigabe = 3;
+                    }
+
+                    else if (status == "Veröffentlicht")
+                    {
+                        Freigabe = 4;
+                        document.ReleaseDate = DateTime.Now;
                     }
 
                     document.Freigabe = Freigabe;

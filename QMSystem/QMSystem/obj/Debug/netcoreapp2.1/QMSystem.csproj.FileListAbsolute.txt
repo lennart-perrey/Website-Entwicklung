@@ -190,3 +190,5 @@ C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\o
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.dll
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.pdb
 C:\Users\leon-\OneDrive\Dokumente\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\QMSystem.csproj.CopyComplete
+C:\Users\Marc\Documents\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\Razor\Views\Home\AdminTool.g.cshtml.cs
+C:\Users\Marc\Documents\GitHub\Website-Entwicklung\QMSystem\QMSystem\obj\Debug\netcoreapp2.1\Razor\Views\Home\History.g.cshtml.cs

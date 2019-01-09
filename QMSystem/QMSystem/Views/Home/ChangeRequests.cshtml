@@ -5,33 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@using (Html.BeginForm("Create", "Home", new { enctype = "multipart/form-data" }))
-    {
-        <div style="margin-left:10px">
-            <p>Titel der Änderung</p>
-            <input style="width: 200px;" type="text" name="ChangeTitle" id="ChangeTitle" />
-
-            <p>Beschreibung der Änderung</p>
-            <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="80"></textarea><br />
-
-            <h2>Datei auswählen</h2>
-            <input type="file" name="myFile" id="myFile" size="50" /><br /><br />
-        </div>
-
-        <button type="submit" class="btn" style="margin-left:10px">Antrag stellen</button>
-    }*@
 <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Create">
     <div style="margin-left:10px">
         <p>Titel der Änderung</p>
-        <input style="width: 400px;" type="text" name="ChangeTitle" id="ChangeTitle" />
+        <input style="width: 720px;" type="text" name="ChangeTitle" id="ChangeTitle" />
 
         <p>Beschreibung der Änderung</p>
-        <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="80" resize="none"></textarea><br />
+        <textarea name="Beschreibung" id="Beschreibung" rows="10" cols="100" resize="none"></textarea><br />
 
         <h2>Datei auswählen</h2>
-        <input type="file" name="myFile" id="myFile" size="50" resize="none" /><br /><br />
+        <input style="font-size:12px;" type="file" name="myFile" id="myFile" size="50" resize="none" class="inputfile"/><br /><br />
     </div>
-    <button type="submit"class="btn" value="upload" style="margin-left:10px ;background-color: rgba(26, 28, 138, 0.65); font-size:16px; color:white; display:inline-block; padding:15px 32px; border:none; text-decoration:none; text-align:center;font-family: Arial;">Antrag stellen</button>
+    <button type="submit" class="btn" value="upload" style="margin-left:10px ;background-color: rgba(26, 28, 138, 0.65); font-size:16px;
+            color:white; display:inline-block; padding:15px 32px; border:none; text-decoration:none; text-align:center;font-family: Arial;">
+        Antrag stellen
+    </button>
 </form>
 
 

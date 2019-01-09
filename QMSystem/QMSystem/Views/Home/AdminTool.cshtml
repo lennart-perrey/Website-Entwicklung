@@ -7,6 +7,9 @@
 }
 
 <style>
+    table {
+        margin: 10px;
+    }
 
     td, th {
         border: 1px solid #dddddd;
@@ -21,8 +24,7 @@
 
 
 
-<h2>Änderungsanträge</h2>
-
+<h2 style="margin: 10px;">Änderungsanträge</h2>
 
 <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
 
@@ -36,86 +38,88 @@
         <th>Freigabestatus</th>
     </tr>
     @{ var index = 0; }
+
     @foreach (Documents document in Model)
     {
-        index++;
-        <tr>
-            <td>
-                @document.DocumentName
-            </td>
-            <td>
-                <a href="@document.DocumentPath" target="_blank" Link>@document.DocumentPath</a>
+        if (document.Freigabe == 0 || document.Freigabe == 1 || document.Freigabe == 2 || document.Freigabe == 3)
+        {
+            index++;
+            var FreigabeID = "Freigabe" + index;
+            var DocumentID = "Document" + index;
+            <tr>
+                <td>
+                    @document.DocumentName
+                </td>
+                <td>
+                    <a href="@document.DocumentPath" target="_blank" Link>@document.DocumentPath</a>
 
-            </td>
-            <td>
-                @document.RequestDate
-            </td>
-            <td>
-                @document.UserName
-            </td>
-            <td>
-                @document.Betreff
-            </td>
-            <td>
-                @document.Anmerkungen
-            </td>
-            <td>
+                </td>
+                <td>
+                    @document.RequestDate
+                </td>
+                <td>
+                    @document.UserName
+                </td>
+                <td>
+                    @document.Betreff
+                </td>
+                <td>
+                    @document.Anmerkungen
+                </td>
+                <td>
 
-                <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
-                    <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
-                    <input type="hidden" id="Freigabe_@index" name="Freigabe" value="@document.Freigabe">
-                    <select class="form-control" id="Status" name="Status">
+                    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateState">
 
+                        @{
+                            string concatet0 = "sel_0" + DocumentID;
+                            string concatet1 = "sel_1" + DocumentID;
+                            string concatet2 = "sel_2" + DocumentID;
+                            string concatet3 = "sel_3" + DocumentID;
+                            string concatet4 = "sel_4" + DocumentID;
+                        }
+                        <input type="hidden" id="documentID" name="documentID" value="@document.DocumentId">
+                        <select class="form-control" id="Status" name="Status">
 
-                        <option id="sel0_@document.DocumentId">Nicht freigegeben</option>
-                        <option id="sel1_@document.DocumentId">Direkte Freigabe</option>
-                        <option id="sel2_@document.DocumentId">Weitergabe an GF</option>
-                        <option id="sel3_@document.DocumentId">Abgelehnt</option>
+                            <option id="@concatet0">Nicht freigegeben</option>
+                            <option id="@concatet1">Direkte Freigabe</option>
+                            <option id="@concatet2">Weitergabe an GF</option>
+                            <option id="@concatet3">Abgelehnt</option>
+                            <option id="@concatet4">Veröffentlicht</option>
 
-                    </select>
+                        </select>
 
+                        @if (document.Freigabe == 0)
+                        {
+                            <script>
+                                document.getElementById("@concatet0").selected = true;
+                            </script>
+                        }
+                        else if (document.Freigabe == 1)
+                        {
+                            <script>
+                                document.getElementById("@concatet1").selected = true;
+                            </script>
+                        }
+                        else if (document.Freigabe == 2)
+                        {
+                            <script>
+                                document.getElementById("@concatet2").selected = true;
+                            </script>
+                        }
+                        else if (document.Freigabe == 3)
+                        {
+                            <script>
+                                document.getElementById("@concatet3").selected = true;
+                            </script>
+                        }
 
-
-
-                    <input type="submit" value="Submit Change Request">
-                </form>
-            </td>
-        </tr>
+                        <input type="submit" value="Submit Change Request">
+                    </form>
+                </td>
+            </tr>
+        }
     }
+
 </table>
 
-<script>
 
-    var getAllElementsWithFreigabe = document.getElementsByName("Freigabe");
-
-
-    var optionName0 = "sel0_";
-    var optionName1 = "sel1_";
-    var optionName2 = "sel2_";
-    var optionName3 = "sel3_";
-
-    if (document.getElementById("Freigabe").value == 0) {
-
-        document.getElementById(optionName0.concat(document.getElementById("documentID").value)).selected = true;
-        alert("bin in Option 0");
-    }
-
-
-    if (document.getElementById("Freigabe").value == 1) {
-
-        document.getElementById(optionName1.concat(document.getElementById("documentID").value)).selected = true;
-        alert("bin in Option 1");
-    }
-
-    if (document.getElementById("Freigabe").value == 2) {
-
-        document.getElementById(optionName2.concat(document.getElementById("documentID").value)).selected = true;
-        alert("bin in Option 2");
-    }
-
-    if (document.getElementById("Freigabe").value == 3) {
-
-        document.getElementById(optionName3.concat(document.getElementById("documentID").value)).selected = true;
-        alert("bin in Option 3");
-    }
-</script>

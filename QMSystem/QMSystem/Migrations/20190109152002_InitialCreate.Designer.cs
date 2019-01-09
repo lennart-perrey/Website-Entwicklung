@@ -10,7 +10,7 @@ using QMSystem.Models;
 namespace QMSystem.Migrations
 {
     [DbContext(typeof(DocumentContext))]
-    [Migration("20181220192642_InitialCreate")]
+    [Migration("20190109152002_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,8 @@ namespace QMSystem.Migrations
                     b.Property<string>("DocumentPath");
 
                     b.Property<int>("Freigabe");
+
+                    b.Property<DateTime>("ReleaseDate");
 
                     b.Property<DateTime>("RequestDate");
 

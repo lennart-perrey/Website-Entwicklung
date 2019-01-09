@@ -35,6 +35,8 @@ namespace QMSystem.Migrations
 
                     b.Property<int>("Freigabe");
 
+                    b.Property<DateTime>("ReleaseDate");
+
                     b.Property<DateTime>("RequestDate");
 
                     b.Property<string>("UserName");
